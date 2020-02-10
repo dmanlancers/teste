@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2018, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/chatBot1Fragment">
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        tools:layout="@layout/onboarding_fragment"
+        android:name="pt.ren.mobile.investors.ui.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_chatBot1Fragment2"
+            app:destination="@id/chatBot1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot1Fragment"
+        tools:layout="@layout/chatbot1_fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot1Fragment"
+        android:label="ChatBot1Fragment" >
+        <action
+            android:id="@+id/action_chatBot1Fragment2_to_chatBot2Fragment"
+            app:destination="@id/chatBot2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot2Fragment"
+        tools:layout="@layout/chatbot2_fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot2Fragment"
+        android:label="ChatBot2Fragment" >
+        <action
+            android:id="@+id/action_chatBot2Fragment_to_chatBot3Fragment"
+            app:destination="@id/chatBot3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot3Fragment"
+        tools:layout="@layout/chatbot3_fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot3Fragment"
+        android:label="ChatBot3Fragment" >
+        <action
+            android:id="@+id/action_chatBot3Fragment_to_chatBot4Fragment"
+            app:destination="@id/chatBot4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot4Fragment"
+        tools:layout="@layout/chatbot4_fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot4Fragment"
+        android:label="ChatBot4Fragment" >
+        <action
+            android:id="@+id/action_chatBot4Fragment_to_chatBot5Fragment"
+            app:destination="@id/chatBot5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot5Fragment"
+        tools:layout="@layout/chatbot5_fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot5Fragment"
+        android:label="ChatBot5Fragment" >
+        <action
+            android:id="@+id/action_chatBot5Fragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        tools:layout="@layout/profile_fragment"
+        android:name="pt.ren.mobile.investors.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="pt.ren.mobile.investors.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
+</navigation>
