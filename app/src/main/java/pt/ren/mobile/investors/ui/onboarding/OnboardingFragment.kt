@@ -5,24 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import pt.ren.mobile.investors.R
 
 
-
-
 class OnboardingFragment : Fragment() {
-
+    var viewPager2: ViewPager2? = null
     override fun onCreateView(
         inflater: LayoutInflater,
-        container: ViewGroup?,
+        parent: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View? { // Defines the xml file for the fragment
+        return inflater.inflate(R.layout.fragment_onboarding, parent, false)
 
-        // Inflate the layout for this fragment
-        val view = inflater?.inflate(R.layout.onboarding_fragment,
-            container, false)
 
-        return view
+
     }
 
 
