@@ -1,20 +1,17 @@
 package pt.ren.mobile.investors.ui.activities.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+import me.relex.circleindicator.CircleIndicator3
 import pt.ren.mobile.investors.R
 import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnBoardingCardTwo
 import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnboardingCardOne
 import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnboardingCardThree
-import pt.ren.mobile.investors.utils.viewpager.DotIndicatorPager2Adapter
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +24,11 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewpager) as ViewPager2
         viewPager!!.adapter = MyAdapter(supportFragmentManager, lifecycle)
         viewPager!!.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
+        
+
+        val indicator: CircleIndicator3 = findViewById(R.id.indicator)
+        indicator.setViewPager(viewPager)
 
       /*  val dotsIndicator = findViewById<DotsIndicator>(R.id.dots_indicator)
       *//*  val springDotsIndicator = findViewById<SpringDotsIndicator>(R.id.spring_dots_indicator)
