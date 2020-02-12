@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         viewPager!!.adapter = MyAdapter(supportFragmentManager, lifecycle)
         viewPager!!.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
-        
+
 
         val indicator: CircleIndicator3 = findViewById(R.id.indicator)
         indicator.setViewPager(viewPager)
