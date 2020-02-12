@@ -20,6 +20,7 @@ import pt.ren.mobile.investors.utils.viewpager.DotIndicatorPager2Adapter
 class MainActivity : AppCompatActivity() {
     private var viewPager: ViewPager2? = null
 
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_onboarding)
