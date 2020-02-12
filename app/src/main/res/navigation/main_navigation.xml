@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/onboardingFragment">
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="pt.ren.mobile.investors.ui.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_chatBot1Fragment"
+            app:destination="@id/chatBot1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot1Fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot1Fragment"
+        android:label="ChatBot1Fragment" >
+        <action
+            android:id="@+id/action_chatBot1Fragment_to_chatBot2Fragment"
+            app:destination="@id/chatBot2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot2Fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot2Fragment"
+        android:label="ChatBot2Fragment" >
+        <action
+            android:id="@+id/action_chatBot2Fragment_to_chatBot3Fragment"
+            app:destination="@id/chatBot3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot3Fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot3Fragment"
+        android:label="ChatBot3Fragment" >
+        <action
+            android:id="@+id/action_chatBot3Fragment_to_chatBot4Fragment"
+            app:destination="@id/chatBot4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot4Fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot4Fragment"
+        android:label="ChatBot4Fragment" >
+        <action
+            android:id="@+id/action_chatBot4Fragment_to_chatBot5Fragment"
+            app:destination="@id/chatBot5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBot5Fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBot5Fragment"
+        android:label="ChatBot5Fragment" >
+        <action
+            android:id="@+id/action_chatBot5Fragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="pt.ren.mobile.investors.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+</navigation>
