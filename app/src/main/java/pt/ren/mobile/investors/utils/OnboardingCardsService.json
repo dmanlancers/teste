@@ -1,0 +1,46 @@
+{
+   "Result":"OK",
+   "Total":"3",
+   "Schema":"AppInvestidores_onboarding",
+   "content":[
+      {
+         "AppInvestidores_onboarding":{
+            "name":"Card 2",
+            "pt_pt__title":"Este é o cartão número 2",
+            "pt_pt__detail":"Este cartão deve aparecer em terceiro lugar na listagem.",
+            "en_gb__title":"This is card number 2",
+            "en_gb__detail":"This card should appear third on the list.",
+            "scrId":"398E9543-05B6-4042-A0CB-FAE0C96829C5",
+            "scrLang":"pt",
+            "scrChannel":"/ren/app_investidores/inicial",
+            "scrState":"published"
+         }
+      },
+      {
+         "AppInvestidores_onboarding":{
+            "name":"Card 1",
+            "pt_pt__title":"Este é o cartão número 1",
+            "pt_pt__detail":"Este cartão deve aparecer em segundo lugar na listagem.",
+            "en_gb__title":"This is card number 1",
+            "en_gb__detail":"This card should appear second on the list.",
+            "scrId":"D91E0014-A1DB-4983-8DF9-977960EE2795",
+            "scrLang":"pt",
+            "scrChannel":"/ren/app_investidores/inicial",
+            "scrState":"published"
+         }
+      },
+      {
+         "AppInvestidores_onboarding":{
+            "name":"Card 0",
+            "pt_pt__title":"Ajuste o conteúdo criado para você",
+            "pt_pt__detail":"Conte-nos sobre suas preferências para que possamos ajustar o conteúdo às suas necessidades.",
+            "en_gb__title":"Adjust content made for you",
+            "en_gb__detail":"Tell us about your preferences so we can ajust the contents to your needs.",
+            "scrId":"07590EB7-6702-487E-BFB2-14103EA0F1B4",
+            "scrLang":"pt",
+            "scrChannel":"/ren/app_investidores/inicial",
+            "scrState":"published"
+         }
+      }
+   ]
+}

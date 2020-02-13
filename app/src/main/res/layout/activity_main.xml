@@ -1,30 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activities.main.MainActivity">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/background_gradient_selector"
+tools:context=".ui.activities.main.MainActivity">
 
 
-  <fragment
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/my_nav_host_fragment"
-    android:name="androidx.navigation.fragment.NavHostFragment"
-    app:navGraph="@navigation/main_navigation"
-    app:defaultNavHost="true"
-    />
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout"
+      android:layout_width="422dp"
+      android:layout_height="250dp"
+      android:layout_marginStart="1dp"
+      android:layout_marginLeft="1dp"
+      android:layout_marginTop="110dp"
+      android:layout_marginEnd="1dp"
+      android:layout_marginRight="1dp"
+      android:background="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.538"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView">
 
-<androidx.viewpager2.widget.ViewPager2
-      android:id="@+id/viewpager"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="@+id/viewpager"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
-
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="0dp"
+        android:layout_height="154dp"
+        android:layout_gravity="bottom|center_horizontal|end"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_skip" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

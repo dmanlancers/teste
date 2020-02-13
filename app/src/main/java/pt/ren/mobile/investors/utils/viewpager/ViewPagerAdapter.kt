@@ -1,78 +1,34 @@
-package pt.ren.mobile.investors.utils.viewpager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import pt.ren.mobile.investors.R
-import pt.ren.mobile.investors.ui.activities.main.MainActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnBoardingCardTwo
+import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnboardingCardOne
+import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnboardingCardThree
 
+ class ViewPagerAdapter(fm: FragmentManager?, lifecycle: Lifecycle) :
+    FragmentStateAdapter(fm!!, lifecycle) {
+    private val intItems = 3
 
-class ViewPagerAdapter internal constructor(
-    context: MainActivity,
-    data: List<String>,
-    viewPager2: ViewPager2
-) :
-    RecyclerView.Adapter<ViewPagerAdapter.ViewHolder>() {
-    private val mData: List<String>
-    private val mInflater: LayoutInflater
-    private val viewPager2: ViewPager2
-    private val colorArray = intArrayOf(
-        R.color.blue_100,
-        R.color.chuck_colorAccent,
-        R.color.chuck_status_error
-
-    )
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): ViewHolder {
-        val view: View = mInflater.inflate(R.layout.item_viewpager, parent, false)
-        return ViewHolder(view)
-    }
-
-    override fun onBindViewHolder(
-        holder: ViewHolder,
-        position: Int
-    ) {
-        val animal = mData[position]
-        holder.myTextView.text = animal
-        holder.constraintLayout.setBackgroundResource(colorArray[position])
+    override fun createFragment(position: Int): Fragment {
+        var fragment: Fragment? = null
+        when (position) {
+            0 -> fragment =
+                OnboardingCardOne()
+            1 -> fragment =
+                OnBoardingCardTwo()
+            2 -> fragment =
+                OnboardingCardThree()
+            /*   3 -> fragment =
+                ViewPagerFragment()
+         4 -> fragment =
+                ViewPagerFragment()*/
+        }
+        return fragment!!
     }
 
     override fun getItemCount(): Int {
-        return mData.size
+        return intItems
     }
-
-    inner class ViewHolder internal constructor(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-        var myTextView: TextView
-        var constraintLayout: ConstraintLayout
-        var button: Button
-
-        init {
-            myTextView = itemView.findViewById(R.id.tvTitle)
-            constraintLayout = itemView.findViewById(R.id.container)
-            button = itemView.findViewById(R.id.btnToggle)
-            button.setOnClickListener {
-                if (viewPager2.orientation == ViewPager2.ORIENTATION_VERTICAL) viewPager2.orientation =
-                    ViewPager2.ORIENTATION_HORIZONTAL else {
-                    viewPager2.orientation = ViewPager2.ORIENTATION_VERTICAL
-                }
-            }
-        }
-    }
-
-    init {
-        mInflater = LayoutInflater.from(context)
-        mData = data
-        this.viewPager2 = viewPager2
-    }
-
 
 }
-
