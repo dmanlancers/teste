@@ -1,15 +1,21 @@
 package pt.ren.mobile.investors.ui.activities.main
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+import kotlinx.android.synthetic.main.activity_main.*
 import pt.ren.mobile.investors.R
 import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnBoardingCardTwo
 import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnboardingCardOne
@@ -19,34 +25,24 @@ import pt.ren.mobile.investors.utils.viewpager.DotIndicatorPager2Adapter
 
 class MainActivity : AppCompatActivity() {
     private var viewPager: ViewPager2? = null
-
+    val host = NavHostFragment.create(R.navigation.main_navigation)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_onboarding)
+        setContentView(R.layout.activity_main)
         viewPager = findViewById(R.id.viewpager) as ViewPager2
         viewPager!!.adapter = MyAdapter(supportFragmentManager, lifecycle)
         viewPager!!.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
-      /*  val dotsIndicator = findViewById<DotsIndicator>(R.id.dots_indicator)
-      *//*  val springDotsIndicator = findViewById<SpringDotsIndicator>(R.id.spring_dots_indicator)
-        val wormDotsIndicator = findViewById<WormDotsIndicator>(R.id.worm_dots_indicator)*//*
-
-        val viewPager2 = findViewById<ViewPager2>(R.id.viewpager)
-        val adapter = DotIndicatorPager2Adapter()
-        viewPager2.adapter = adapter*/
-
-       /* val zoomOutPageTransformer = ZoomOutPageTransformer()
-        viewPager2.setPageTransformer { page, position ->
-            zoomOutPageTransformer.transformPage(page, position)
-        }*/
-
-        //dotsIndicator.setViewPager2(viewPager2)
-       /* springDotsIndicator.setViewPager2(viewPager2)
-        wormDotsIndicator.setViewPager2(viewPager2)*/
+        btn_skip.setOnClickListener {
+            Log.d("btnSetup", "Selected")
+            supportFragmentManager.beginTransaction().replace(R.id.my_nav_host_fragment, host).setPrimaryNavigationFragment(host).commit()
+        }
 
 
 
     }
+    override fun onSupportNavigateUp() =
+        findNavController( R.id.my_nav_host_fragment).navigateUp()
 
     private inner class MyAdapter(fm: FragmentManager?, lifecycle: Lifecycle) :
         FragmentStateAdapter(fm!!, lifecycle) {
@@ -75,3 +71,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+
