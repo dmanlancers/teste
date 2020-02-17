@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/chatBot1Fragment">
+    <fragment
+        android:id="@+id/chatBot1Fragment"
+        android:name="pt.ren.mobile.investors.ui.chatbot.ChatBotFragment"
+        android:label="ChatBot1Fragment"
+        tools:layout="@layout/fragment_chatbot">
+        <action
+            android:id="@+id/action_chatBot1Fragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="pt.ren.mobile.investors.ui.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+</navigation>
