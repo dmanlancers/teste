@@ -26,4 +26,6 @@ class RENConstants {
         "/ren/site_ren/homepage/investidores/dividendos/entradas_de_tabela"
     val CHANNEL_DIVIDENDOS_INDICADORES_TRIMESTRAIS =
         "/ren/site_ren/homepage/investidores/dividendos/entradas_tabela_trimestral"
+    val CHANNEL_UI_CARDS =
+        "/ren/app_investidores/inicial/"
 }
