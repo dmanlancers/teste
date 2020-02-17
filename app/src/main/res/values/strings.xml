@@ -17,7 +17,7 @@
 <resources>
     <string name="app_name">REN INVESTORS</string>
     <string name="welcome"> WELCOME!</string>
-    <string name="introdution">We are happy to see you.\nAre you ready to discover our latest news?</string>
+    <string name="introduction">We are happy to see you.\nAre you ready to discover our latest news?</string>
     <string name="skip">Skip</string>
     <string name="play_again">Play Again</string>
     <string name="you_scored">You Scored</string>
@@ -42,4 +42,6 @@
     <string name="title_card_one">CARD 1</string>
     <string name="title_card_two">CARD 2</string>
     <string name="title_card_three">CARD 3</string>
+    <string name="service_error">Service Error</string>
+
 </resources>
