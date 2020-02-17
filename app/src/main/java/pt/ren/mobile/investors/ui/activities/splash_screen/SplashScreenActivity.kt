@@ -9,7 +9,7 @@ import pt.ren.mobile.investors.R
 
 
 class SplashScreenActivity : AppCompatActivity(){
-    private val SplashDisplayLenght =30000  //splash screen will be shown for 3 seconds
+    private val SplashDisplayLenght =3000  //splash screen will be shown for 3 seconds
 
     /** Called when the activity is first created.  */
     public override fun onCreate(icicle: Bundle?) {

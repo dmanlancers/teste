@@ -32,7 +32,7 @@ class MainActivityViewModel : ViewModel() {
 
 
 
-    fun GetAllCards(getCardsCallback: RENServicesInterface.GetCardsCallback) {
+  /*  fun GetAllCards(getCardsCallback: RENServicesInterface.GetCardsCallback) {
 
         if (service != null) {
             val currentCall: Call<OnBoardingCardsModel?>? =
@@ -67,7 +67,7 @@ class MainActivityViewModel : ViewModel() {
             })
         }
     }
-
+*/
 
     override fun onCleared() {
         super.onCleared()
