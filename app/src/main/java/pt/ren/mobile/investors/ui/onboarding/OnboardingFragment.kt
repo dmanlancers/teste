@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import pt.ren.mobile.investors.R
 
 
-class OnboardingFragment : Fragment() {
+class OnBoardingFragment : Fragment() {
     var viewPager2: ViewPager2? = null
     override fun onCreateView(
         inflater: LayoutInflater,

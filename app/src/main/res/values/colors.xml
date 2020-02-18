@@ -31,12 +31,14 @@
     <color name="green_500">#673AB7</color>
     <color name="green_700">#0B8043</color>
     <color name="greeny_yellow">#c4e80a</color>
+    <color name="dark_blue_dots">#80001464</color>
     <color name="dark_blue">#001464</color>
     <!-- Screens background color-->
     <color name="bg_screen1">#f64c73</color>
     <color name="bg_screen2">#20d2bb</color>
     <color name="bg_screen3">#3395ff</color>
     <color name="bg_screen4">#c873f4</color>
+    <color name="chatbot_next">#2ad69e</color>
 
     <!-- dots inactive colors -->
     <color name="dot_dark_screen1">#d1395c</color>

@@ -3,8 +3,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnBoardingCardTwo
-import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnboardingCardOne
-import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnboardingCardThree
+import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnBoardingCardOne
+import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnBoardingCardThree
 
  class ViewPagerAdapter(fm: FragmentManager?, lifecycle: Lifecycle) :
     FragmentStateAdapter(fm!!, lifecycle) {
@@ -14,11 +14,11 @@ import pt.ren.mobile.investors.ui.onboarding.ViewPagerCards.OnboardingCardThree
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment =
-                OnboardingCardOne()
+                OnBoardingCardOne()
             1 -> fragment =
                 OnBoardingCardTwo()
             2 -> fragment =
-                OnboardingCardThree()
+                OnBoardingCardThree()
             /*   3 -> fragment =
                 ViewPagerFragment()
          4 -> fragment =

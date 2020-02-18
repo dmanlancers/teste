@@ -11,21 +11,23 @@
 
     <ImageView
         android:id="@+id/bg_splashscreen"
-        android:layout_width="423dp"
-        android:layout_height="473dp"
+        android:layout_width="0dp"
+        android:layout_height="607dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/bg_splash"
         app:layout_constraintBottom_toTopOf="@+id/txt_welcome"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_welcome"
-        style="@style/TextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        style="@style/welcome"
+        android:layout_width="375dp"
         android:text="@string/welcome"
+        android:textAlignment="center"
+        android:textColor="@color/dark_blue"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_introdution"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -34,15 +36,9 @@
 
     <TextView
         android:id="@+id/txt_introdution"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
-        android:gravity="center_horizontal"
-        android:lineSpacingExtra="6sp"
+        style="@style/txt_onboarding"
         android:text="@string/introduction"
-        android:textColor="#001464"
-        android:textSize="18sp"
+        android:textColor="@color/dark_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

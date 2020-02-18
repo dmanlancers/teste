@@ -28,13 +28,13 @@ class ChatBotFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        btn_next.setOnClickListener {
+      /*  btn_next.setOnClickListener {
             val navhost = activity?.supportFragmentManager?.findFragmentById(R.id.my_nav_host_fragment)
             val c = NavHostFragment.findNavController(navhost!!)
             c.navigate(R.id.action_chatBot1Fragment_to_profileFragment)
             Log.i("TESTE", "OUTRO")
 
-        }
+        }*/
 
         super.onViewCreated(view, savedInstanceState)
     }

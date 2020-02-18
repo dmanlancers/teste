@@ -1,40 +1,9 @@
-<!--
-  ~ Copyright 2018, The Android Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~      http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
 
 <resources>
     <string name="app_name">REN INVESTORS</string>
     <string name="welcome"> WELCOME!</string>
     <string name="introduction">We are happy to see you.\nAre you ready to discover our latest news?</string>
     <string name="skip">Skip</string>
-    <string name="play_again">Play Again</string>
-    <string name="you_scored">You Scored</string>
-    <string name="title_text">guess the word!</string>
-    <string name="play_button">Play</string>
-    <string name="get_ready">Get ready to</string>
-    <string name="got_it">Got it</string>
-    <string name="word_is">The word is…</string>
-    <string name="quote_format">\"%s\"</string>
-    <string name="score_format">Current Score: %d</string>
-    <string name="one">Ajuste o conteúdo criado para vocêADJUSTEste é o cartão número 1</string>
-    <string name="three">Este é o cartão número 2</string>
-    <string name="no_image">No Image</string>
-    <string name="tutorial_by">Tutorial By Tutorialwing.com</string>
-    <string name="first_fragment">First Fragment</string>
-    <string name="second_fragment">Second Fragment</string>
-    <string name="third_fragment">Third Fragment</string>
     <string name="description_card_one">"Tell us about your preferences so we can adjust the contentsto your needs."</string>
     <string name="description_card_two">"Este cartão deve aparecer em segundo lugar na listagem."</string>
     <string name="description_card_three">"Este cartão deve aparecer em terceiro lugar na listagem."</string>
@@ -42,24 +11,12 @@
     <string name="title_card_two">This is the second card</string>
     <string name="title_card_three">This is the third card</string>
     <string name="service_error">Service Error</string>
-
     <string name="next">NEXT</string>
-
-    <string name="start">GOT IT</string>
-
-    <string name="slide_1_title">Hello Food!</string>
-    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
-
-    <string name="slide_2_title">Movie Tickets</string>
-    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
-
-    <string name="slide_3_title">Great Discounts</string>
-    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
-
-    <string name="slide_4_title">World Travel</string>
-    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
-
-    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="got_it">GOT IT</string>
+    <string name="ren_logo">ren logo</string>
+    <string name="btn_chatbot1_next">btn_chatbot1_next</string>
+    <string name="chatbot1_question">First things first. What is your name?</string>
+    <string name="submit">Submit</string>
 
 
 </resources>
