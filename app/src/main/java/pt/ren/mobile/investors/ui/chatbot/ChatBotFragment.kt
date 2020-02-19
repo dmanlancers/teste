@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
-import kotlinx.android.synthetic.main.fragment_chatbot.*
 import pt.ren.mobile.investors.R
 
 
@@ -19,7 +18,7 @@ class ChatBotFragment : Fragment() {
         parent: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { // Defines the xml file for the fragment
-        return inflater.inflate(R.layout.fragment_chatbot, parent, false)
+        return inflater.inflate(R.layout.fragment_chatbot_block01, parent, false)
 
 
 

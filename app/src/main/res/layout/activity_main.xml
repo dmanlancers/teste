@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient_selector"
+    android:background="@drawable/ic_onboarding_bg"
     tools:context=".ui.activities.main.MainActivity">
 
 
@@ -13,62 +13,57 @@
         android:layout_width="0dp"
         android:layout_height="487dp"
         android:layout_gravity="bottom|center_horizontal|end"
-        android:layout_marginTop="375dp"
+        android:layout_marginTop="305dp"
         android:background="@color/white"
         android:padding="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bg_onboarding"/>
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/bg_onboarding"
+        app:layout_constraintVertical_bias="0.504" />
 
     <ImageView
         android:id="@+id/bg_onboarding"
         android:layout_width="0dp"
         android:layout_height="380dp"
         android:layout_marginStart="22dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="38dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_skip"
+        android:layout_marginTop="18dp"
         app:layout_constraintStart_toStartOf="@+id/viewpager"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ilustracoes" />
+        app:srcCompat="@drawable/ic_ilustracoes" />
 
     <TextView
         android:id="@+id/btn_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
-        android:layout_marginTop="799dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="312dp"
         android:fontFamily="@font/title"
         android:text="@string/skip"
         android:textColor="@color/dark_blue"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/viewpager"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintTop_toBottomOf="@+id/bg_onboarding" />
 
     <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
         android:id="@+id/dots_indicator"
         android:layout_width="0dp"
         android:layout_height="4dp"
-        android:layout_marginTop="489dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="305dp"
+        android:layout_marginEnd="33dp"
         app:dotsColor="@color/dark_blue_dots"
         app:dotsCornerRadius="2dp"
         app:dotsSize="7dp"
         app:dotsSpacing="2dp"
         app:dotsWidthFactor="2.5"
-        app:layout_constraintBottom_toTopOf="@+id/viewpager"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_skip"
         app:layout_constraintTop_toBottomOf="@+id/bg_onboarding"
         app:progressMode="true"
         app:selectedDotColor="@color/dark_blue" />

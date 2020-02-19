@@ -1,54 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient_selector"
-    tools:context=".ui.activities.chatbot.ChatBotActivity">
+    android:background="@drawable/background_gradient_selector">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chatbot_constaint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <include
+            android:id="@+id/chatbot_block01"
+            layout="@layout/fragment_chatbot_block01"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_alignParentTop="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
 
-            <include layout="@layout/fragment_chatbot" />
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="630dp"
+            app:layout_constraintStart_toStartOf="@+id/chatbot_block01"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <include layout="@layout/fragment_chatbot2" />
+            <!-- Main content -->
 
-            <include layout="@layout/fragment_chatbot3" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/chatbot1_next_floating_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="end"
+                android:layout_margin="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:backgroundTint="@color/chatbot_next"
+                app:borderWidth="0dp" />
 
-            <include layout="@layout/fragment_chatbot4" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-            <include layout="@layout/fragment_chatbot5" />
-
-
-        </LinearLayout>
-    </ScrollView>
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <!-- Main content -->
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/chatbot1_next_floating_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom|right"
-            android:layout_margin="16dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:backgroundTint="@color/chatbot_next"
-            app:borderWidth="0dp"
-            app:srcCompat="@drawable/chatbot1_btn_next" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -16,6 +16,6 @@ class ChatBot2Fragment : Fragment() {
         parent: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? { // Defines the xml file for the fragment
-        return inflater.inflate(R.layout.fragment_chatbot2, parent, false)
+        return inflater.inflate(R.layout.fragment_chatbot_block02, parent, false)
     }
 }
