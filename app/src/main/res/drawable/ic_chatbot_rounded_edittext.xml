@@ -6,9 +6,6 @@
         android:shape="rectangle" android:padding="10dp">
         <solid android:color="#FFFFFF"/>
         <corners
-            android:bottomRightRadius="33.5dp"
-            android:bottomLeftRadius="33.5dp"
-            android:topLeftRadius="33.5dp"
-            android:topRightRadius="33.5dp"/>
+            android:radius="33.5dp"/>
     </shape>
 
