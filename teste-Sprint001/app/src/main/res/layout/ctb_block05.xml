@@ -33,17 +33,6 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_end="96dp" />
 
-        <Button
-            android:id="@+id/correct_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="@string/got_it"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            android:layout_marginRight="16dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

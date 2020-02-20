@@ -1,61 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatbot_constaint"
+    android:background="@drawable/background_gradient_selector"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_gradient_selector">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/chatbot_constaint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    android:layout_height="match_parent">
+   <!-- android:background="@drawable/background_gradient_selector">-->
 
 
-        <include
-            android:id="@+id/chatbot_block01"
-            layout="@layout/chatbot_layout_block01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="-6dp"
-            tools:layout_editor_absoluteY="-237dp" />
+    <!-- Main content -->
 
-        <include
-            android:id="@+id/chatbot_block_02"
-            layout="@layout/chatbot_layout_block02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1000dp"/>
+    <ScrollView
+        android:id="@+id/chatbot_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-328dp">
 
-        <include
-            android:id="@+id/chatbot_block_03"
-            layout="@layout/chatbot_layout_block03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/block01_include"
+                layout="@layout/ctb_block01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/block02_include"
+                layout="@layout/ctb_block02"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/block01_include" />
+
+            <include
+                android:id="@+id/block03_include"
+                layout="@layout/ctb_block03"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/block02_include" />
+
+            <include
+                android:id="@+id/block04_include"
+                layout="@layout/ctb_block04"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/block03_include" />
 
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/coordinatorLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="282dp">
-
-            <!-- Main content -->
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/chatbot1_next_floating_button"
-                android:layout_width="60dp"
+            <!--
+            <include
+                android:id="@+id/chatbot_block_02"
+                layout="@layout/fragment_chatbot_block02"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_margin="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:backgroundTint="@color/chatbot_next"
-                app:borderWidth="0dp" />
+                android:layout_marginTop="1000dp" />-->
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <!--<include
+            android:id="@+id/chatbot_block_03"
+            layout="@layout/fragment_chatbot_block03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp" />
+-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chatbot1_next_floating_button"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="500dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/chatbot_next"
+        app:borderWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

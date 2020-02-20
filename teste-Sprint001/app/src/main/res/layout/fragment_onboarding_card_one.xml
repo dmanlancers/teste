@@ -12,21 +12,23 @@
 
     <TextView
         android:id="@+id/txt_title_card_one"
+        style="@style/card_txt_title"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="66dp"
         android:text="@string/title_card_one"
-        app:layout_constraintBottom_toTopOf="@+id/txt_description_card_one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098"
-        style="@style/card_txt_title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_description_card_one"
+        style="@style/card_txt_detail"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="52dp"
         android:text="@string/description_card_one"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txt_title_card_one"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        style="@style/card_txt_detail" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title_card_one" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

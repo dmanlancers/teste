@@ -1,17 +1,17 @@
 package pt.ren.mobile.investors.ui.activities.main
 
+
 import ViewPagerAdapter
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import androidx.viewpager.widget.ViewPager
+
 import androidx.viewpager2.widget.ViewPager2
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+
 import kotlinx.android.synthetic.main.activity_main.*
 import pt.ren.mobile.investors.R
 import pt.ren.mobile.investors.ui.activities.chatbot.ChatBotActivity
@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onSupportNavigateUp() =
-        findNavController( R.id.my_nav_host_fragment).navigateUp()
+    /*override fun onSupportNavigateUp() =
+        findNavController( R.id.my_nav_host_fragment).navigateUp()*/
 
 
 }
