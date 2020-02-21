@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="890dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block07_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ctb_block07_logo"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="64dp"
+            android:contentDescription="@string/ren_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user_ren" />
+
+        <TextView
+            android:id="@+id/txt_block07"
+            android:layout_width="249dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginEnd="43dp"
+            android:fontFamily="@font/pfd_intextpro_regular"
+            android:text="@string/txt_last_question"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintStart_toEndOf="@+id/ctb_block07_logo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/scv_block07"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="31dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_block07">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="118dp"
+                    android:layout_height="125dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_chatbot_multi_selection"
+                    android:text="Button"
+                    android:paddingRight="10dp"/>
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="118dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ic_chatbot_multi_selection"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="118dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ic_chatbot_multi_selection"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="118dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ic_chatbot_multi_selection"
+                    android:text="Button" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

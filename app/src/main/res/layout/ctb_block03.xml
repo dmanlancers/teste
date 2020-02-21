@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block03_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ctb_block03_logo"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="64dp"
+            android:contentDescription="@string/ren_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user_ren" />
+
+        <TextView
+            android:id="@+id/txt_block04"
+            android:layout_width="258dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginEnd="43dp"
+            android:fontFamily="@font/pfd_intextpro_regular"
+            android:text="@string/txt_rating"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintStart_toEndOf="@+id/ctb_block03_logo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_elementary"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="47dp"
+            android:background="@drawable/ic_chatbot_rate_rounded"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_intermediate" />
+
+        <Button
+            android:id="@+id/btn_intermediate"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="47dp"
+            android:background="@drawable/ic_chatbot_rate_rounded"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_proficient" />
+
+        <Button
+            android:id="@+id/btn_proficient"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="47dp"
+            android:background="@drawable/ic_chatbot_rate_rounded"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_block04" />
+
+        <TextView
+            android:id="@+id/txt_btn_proeficient"
+            android:layout_width="185dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/pfd_intextpro_medium"
+            android:text="@string/btn_proficient"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_proficient"
+            app:layout_constraintEnd_toEndOf="@+id/btn_proficient"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_proficient"
+            app:layout_constraintTop_toTopOf="@+id/btn_proficient" />
+
+        <TextView
+            android:id="@+id/txt_btn_Intermediate"
+            android:layout_width="185dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/pfd_intextpro_medium"
+            android:text="@string/btn_intermediate"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_intermediate"
+            app:layout_constraintEnd_toEndOf="@+id/btn_intermediate"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_intermediate"
+            app:layout_constraintTop_toTopOf="@+id/btn_intermediate" />
+
+        <TextView
+            android:id="@+id/txt_btn_elementary"
+            android:layout_width="185dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/pfd_intextpro_medium"
+            android:text="@string/btn_elementary"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_elementary"
+            app:layout_constraintEnd_toEndOf="@+id/btn_elementary"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_elementary"
+            app:layout_constraintTop_toTopOf="@+id/btn_elementary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

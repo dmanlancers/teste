@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/chatbot_constaint"
-    android:background="@drawable/background_gradient_selector"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-   <!-- android:background="@drawable/background_gradient_selector">-->
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_selector">
+    <!-- android:background="@drawable/background_gradient_selector">-->
 
 
     <!-- Main content -->
@@ -16,50 +16,60 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-328dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <include
                 android:id="@+id/block01_include"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 layout="@layout/ctb_block01"
-                android:layout_marginTop="430dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="400dp" />
 
             <include
                 android:id="@+id/block02_include"
+                layout="@layout/ctb_block02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="700dp" />
+
+            <include
+                android:id="@+id/block03_include"
+                layout="@layout/ctb_block03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="900dp" />
+
+            <include
+                android:id="@+id/block04_include"
+                layout="@layout/ctb_block04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1350dp" />
+
+
+         <include
+                android:id="@+id/block05_include"
+                layout="@layout/ctb_block05"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                layout="@layout/ctb_block02"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/block01_include" />
+                android:layout_marginTop="1600dp"
+             android:layout_marginBottom="200dp"/>
 
-            <!--
             <include
-                android:id="@+id/chatbot_block_02"
-                layout="@layout/fragment_chatbot_block02"
+                android:id="@+id/chatbot_block06_include"
+                layout="@layout/ctb_block06"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1000dp" />-->
+                android:layout_marginTop="2000dp"
+                android:layout_marginBottom="100dp"/>
 
-
-            <!--<include
-            android:id="@+id/chatbot_block_03"
-            layout="@layout/fragment_chatbot_block03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp" />
--->
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

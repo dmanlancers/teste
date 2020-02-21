@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/block05_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ctb_block05_logo"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="64dp"
+            android:contentDescription="@string/ren_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_user_ren" />
+
+        <TextView
+            android:id="@+id/txt_block05"
+            android:layout_width="246dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="38dp"
+            android:fontFamily="@font/pfd_intextpro_regular"
+            android:text="@string/txt_well"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintStart_toEndOf="@+id/ctb_block05_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeight="32sp" />
+
+        <Button
+            android:id="@+id/btn_few"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="47dp"
+            android:background="@drawable/ic_chatbot_rate_rounded"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_moderately" />
+
+        <Button
+            android:id="@+id/btn_moderately"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="47dp"
+            android:background="@drawable/ic_chatbot_rate_rounded"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_considerably" />
+
+        <Button
+            android:id="@+id/btn_considerably"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="47dp"
+            android:background="@drawable/ic_chatbot_rate_rounded"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_block05" />
+
+        <TextView
+            android:id="@+id/txt_btn_proeficient"
+            android:layout_width="185dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/pfd_intextpro_medium"
+            android:text="@string/btn_considerably"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_considerably"
+            app:layout_constraintEnd_toEndOf="@+id/btn_considerably"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_considerably"
+            app:layout_constraintTop_toTopOf="@+id/btn_considerably" />
+
+        <TextView
+            android:id="@+id/txt_btn_Intermediate"
+            android:layout_width="185dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/pfd_intextpro_medium"
+            android:text="@string/btn_moderately"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_moderately"
+            app:layout_constraintEnd_toEndOf="@+id/btn_moderately"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_moderately"
+            app:layout_constraintTop_toTopOf="@+id/btn_moderately" />
+
+        <TextView
+            android:id="@+id/txt_btn_elementary"
+            android:layout_width="185dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/pfd_intextpro_medium"
+            android:text="@string/btn_few"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_few"
+            app:layout_constraintEnd_toEndOf="@+id/btn_few"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_few"
+            app:layout_constraintTop_toTopOf="@+id/btn_few" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

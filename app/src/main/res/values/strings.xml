@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">REN INVESTORS</string>
     <string name="welcome"> WELCOME!</string>
+    <string name="txt_ty">Thank you!</string>
     <string name="introduction">We are happy to see you.\nAre you ready to discover our latest news?</string>
     <string name="skip">Skip</string>
     <string name="description_card_one">"Tell us about your preferences so we can adjust the contentsto your needs."</string>
@@ -11,13 +12,27 @@
     <string name="title_card_two">This is the second card</string>
     <string name="title_card_three">This is the third card</string>
     <string name="service_error">Service Error</string>
-    <string name="next">NEXT</string>
-    <string name="got_it">GOT IT</string>
     <string name="ren_logo">ren logo</string>
     <string name="btn_chatbot1_next">btn_chatbot1_next</string>
     <string name="ctb_question01">First things first. What is your name?</string>
     <string name="submit">Submit</string>
     <string name="ctb_question02">"Pleased to meet you, Renata. In order to adjust contents to your preferences we will ask you a few questions."</string>
+    <string name="txt_greetings">Please to meet you, name. In order to adjust contents to your preferences we will ask you a few questions.</string>
+    <string name="txt_rating">How would you rate your knowledge on financial investments?</string>
+    <string name="btn_proficient">Proficient</string>
+    <string name="btn_intermediate">Intermediate</string>
+    <string name="btn_elementary">Elementary</string>
+    <string name="btn_considerably">Considerably</string>
+    <string name="btn_moderately">Moderately</string>
+    <string name="btn_few">Few or no information</string>
+    <string name="btn_social">Social</string>
+    <string name="txt_environment">Environment</string>
+    <string name="txt_renewable">Renewable</string>
+    <string name="txt_well">How well do you know REN?</string>
+    <string name="txt_invite">We invite you to learn more about REN. Check our latest video.</string>
+    <string name="txt_last_question">We have one last question for you. Select 3 areas that interests you most.</string>
+    <string name="txt_glossary">A glossary of financial terms will help you while browsing REN\'s APP .</string>
+
 
 
 </resources>
