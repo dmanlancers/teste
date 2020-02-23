@@ -6,12 +6,12 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/block04_container"
+        android:id="@+id/block06_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/ctb_block04_logo"
+            android:id="@+id/ctb_block06_logo"
             android:layout_width="46dp"
             android:layout_height="46dp"
             android:layout_marginStart="30dp"
@@ -22,18 +22,18 @@
             app:srcCompat="@drawable/ic_user_ren" />
 
         <TextView
-            android:id="@+id/txt_block04"
-            android:layout_width="244dp"
+            android:id="@+id/txt_block06"
+            android:layout_width="230dp"
             android:layout_height="96dp"
             android:layout_marginTop="71dp"
-            android:layout_marginEnd="37dp"
+            android:layout_marginEnd="50dp"
             android:fontFamily="@font/pfd_intextpro_regular"
-            android:text="@string/txt_glossary"
+            android:text="@string/txt_invite"
             android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.472"
-            app:layout_constraintStart_toEndOf="@+id/ctb_block04_logo"
+            app:layout_constraintStart_toEndOf="@+id/ctb_block06_logo"
             app:layout_constraintTop_toTopOf="parent" />
 
 

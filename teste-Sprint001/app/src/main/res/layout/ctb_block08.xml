@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <HorizontalScrollView
+            android:id="@+id/scv_block08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="72dp"
+            android:scrollbarStyle="outsideInset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rel_btn_social"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <ImageButton
+                        android:id="@+id/btn_social"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/btn_social"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_icon_social" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_social"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_social"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/btn_social"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                android:id="@+id/rel_btn_environment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rel_btn_social"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/btn_environment"
+                    android:layout_width="118dp"
+                    android:layout_height="125dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ic_chatbot_multi_selection"
+                    android:contentDescription="@string/txt_environment"
+                    android:paddingTop="29dp"
+                    android:paddingBottom="49.6dp"
+                    android:src="@drawable/ic_environment" />
+
+                <TextView
+                    android:id="@+id/txt_btn_environment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/btn_environment"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/pfd_intextpro_bold"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="11.1sp"
+                    android:paddingTop="76dp"
+                    android:paddingBottom="19.9dp"
+                    android:text="@string/txt_environment"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_btn_renewable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_environment"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_renewable"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/btn_social"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_windfan" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_renewable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_renewable"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/txt_renewable"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_btn_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_renewable"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_other"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/btn_social"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_icon_social" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_other"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/btn_social"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

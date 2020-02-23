@@ -28,9 +28,13 @@
     <string name="btn_social">Social</string>
     <string name="txt_environment">Environment</string>
     <string name="txt_renewable">Renewable</string>
+    <string name="txt_well">How well do you know REN?</string>
     <string name="txt_invite">We invite you to learn more about REN. Check our latest video.</string>
     <string name="txt_last_question">We have one last question for you. Select 3 areas that interests you most.</string>
     <string name="txt_glossary">A glossary of financial terms will help you while browsing REN\'s APP .</string>
+    <string name="social">Social</string>
+    <string name="environment"> Environment</string>
+    <string name="renewable">Renewable</string>
 
 
 

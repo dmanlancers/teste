@@ -1,104 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/chatbot_constaint"
     android:background="@drawable/background_gradient_selector"
+    android:orientation="vertical"
+
+    android:addStatesFromChildren="true"
+
     android:layout_width="match_parent"
+
     android:layout_height="match_parent">
-   <!-- android:background="@drawable/background_gradient_selector">-->
 
-
-    <!-- Main content -->
 
     <ScrollView
-        android:id="@+id/chatbot_scrollview"
-        android:layout_width="0dp"
+        android:id="@+id/chatBotScrollView"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="-328dp">
+        >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="#00000000"
+            >
 
             <include
-                android:id="@+id/block01_include"
+                android:id="@+id/ctb_block01"
                 layout="@layout/ctb_block01"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="100dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                />
 
+            <View
+                android:id="@+id/divider01"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+
+                android:background="@android:drawable/screen_background_light_transparent" />
             <include
-                android:id="@+id/block02_include"
+                android:id="@+id/ctb_block02"
                 layout="@layout/ctb_block02"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/block01_include" />
+              />
 
-            <include
-                android:id="@+id/block03_include"
-                layout="@layout/ctb_block03"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/block02_include" />
-
-            <include
-                android:id="@+id/block04_include"
-                layout="@layout/ctb_block04"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/block03_include" />
-
-
-            <!--
-            <include
-                android:id="@+id/chatbot_block_02"
-                layout="@layout/fragment_chatbot_block02"
+            <View
+                android:id="@+id/divider02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1000dp" />-->
+                android:background="@android:drawable/screen_background_light_transparent" />
+
+            <include
+                android:id="@+id/ctb_block03"
+                layout="@layout/ctb_block03" />
 
 
-            <!--<include
-            android:id="@+id/chatbot_block_03"
-            layout="@layout/fragment_chatbot_block03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp" />
--->
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:id="@+id/divider03"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:drawable/screen_background_light_transparent" />
+
+            <include
+                android:id="@+id/ctb_block04"
+                layout="@layout/ctb_block04" />
+
+            <View
+                android:id="@+id/divider04"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:drawable/screen_background_light_transparent" />
+
+            <include
+                android:id="@+id/ctb_block05"
+                layout="@layout/ctb_block05" />
+
+            <View
+                android:id="@+id/divider05"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:drawable/screen_background_light_transparent" />
+
+            <include
+                android:id="@+id/ctb_block06"
+                layout="@layout/ctb_block06" />
+
+            <View
+                android:id="@+id/divider06"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:drawable/screen_background_light_transparent" />
+
+            <include
+                android:id="@+id/ctb_block07"
+                layout="@layout/ctb_block07" />
+
+            <View
+                android:id="@+id/divide07"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:drawable/screen_background_light_transparent" />
+
+            <include
+                android:id="@+id/ctb_block08"
+                layout="@layout/ctb_block08" />
+
+            <View
+                android:id="@+id/divider08"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:drawable/screen_background_light_transparent" />
+
+            <include
+                android:id="@+id/ctb_block09"
+                layout="@layout/ctb_block09" />
+
+            <View
+                android:id="@+id/divider09"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:drawable/screen_background_light_transparent" />
+
+        </LinearLayout>
+
     </ScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/chatbot1_next_floating_button"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_margin="16dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="500dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:backgroundTint="@color/chatbot_next"
-        app:borderWidth="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/chatbot_next"
+            app:borderWidth="0dp"
+            />
+
+
+
+
+
+
+</FrameLayout>

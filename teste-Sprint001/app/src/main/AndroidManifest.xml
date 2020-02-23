@@ -4,6 +4,7 @@
     package="pt.ren.mobile.investors">
 
     <application
+        android:name="pt.ren.mobile.investors.utils.timber.PusherApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Fullscreen"
         tools:ignore="GoogleAppIndexingWarning">
-    <!--    <activity android:name="pt.ren.mobile.investors.ui.activities.splash_screen.SplashScreenActivity">
+        <!--<activity android:name="pt.ren.mobile.investors.ui.activities.splash_screen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,8 +29,10 @@
         </activity>
 
         <activity
-        android:name="pt.ren.mobile.investors.ui.activities.main.MainActivity"
-        android:label="@string/app_name" />
+            android:name="pt.ren.mobile.investors.ui.activities.main.MainActivity"
+            android:label="@string/app_name" />
+
+
        <!-- <activity
             android:name="pt.ren.mobile.investors.ui.activities.chatbot.ChatBotActivity"
             android:label="@string/app_name" />-->
@@ -37,6 +40,8 @@
     <!-- PERMISSIONS -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 
 </manifest>
