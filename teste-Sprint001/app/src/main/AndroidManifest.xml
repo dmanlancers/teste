@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Fullscreen"
         tools:ignore="GoogleAppIndexingWarning">
-        <!--<activity android:name="pt.ren.mobile.investors.ui.activities.splash_screen.SplashScreenActivity">
+       <!-- <activity android:name="pt.ren.mobile.investors.ui.activities.splash_screen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>-->
 
-        <activity android:name="pt.ren.mobile.investors.ui.activities.chatbot.ChatBotActivity">
+        <activity android:name="pt.ren.mobile.investors.ui.activities.chatbot.ChatBotActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,14 +30,27 @@
             </intent-filter>
         </activity>
 
+      <!--  <activity  android:name="pt.ren.mobile.investors.ui.activities.profile.ProfileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+
+      <!--  <activity
+        android:name="pt.ren.mobile.investors.ui.activities.main.MainActivity"
+        android:label="@string/app_name" />-->
+
+        <!--<activity
+            android:name="pt.ren.mobile.investors.ui.activities.chatbot.ChatBotActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="@string/app_name" />-->
         <activity
-            android:name="pt.ren.mobile.investors.ui.activities.main.MainActivity"
+            android:name="pt.ren.mobile.investors.ui.activities.profile.ProfileActivity"
             android:label="@string/app_name" />
 
 
-       <!-- <activity
-            android:name="pt.ren.mobile.investors.ui.activities.chatbot.ChatBotActivity"
-            android:label="@string/app_name" />-->
     </application>
     <!-- PERMISSIONS -->
 

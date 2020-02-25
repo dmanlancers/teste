@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/cnst_card_one"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".ui.onboarding.ViewPagerCards.OnBoardingCardTwo">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,21 +12,19 @@
 
     <TextView
         android:id="@+id/txt_title_card_two"
+        style="@style/card_txt_title"
         android:text="@string/title_card_two"
-        app:layout_constraintBottom_toTopOf="@+id/txt_description_card_one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098"
-        style="@style/card_txt_title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_description_card_two"
+        style="@style/card_txt_detail"
+        android:layout_marginTop="30dp"
         android:text="@string/description_card_two"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txt_title_card_two"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        style="@style/card_txt_detail" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title_card_two" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

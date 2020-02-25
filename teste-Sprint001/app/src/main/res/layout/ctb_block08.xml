@@ -14,7 +14,6 @@
             android:id="@+id/scv_block08"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
             android:scrollbarStyle="outsideInset"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,47 +58,47 @@
                         android:lineSpacingExtra="11.1sp"
                         android:paddingTop="76dp"
                         android:paddingBottom="19.9dp"
-                        android:text="@string/btn_social"
+                        android:text="@string/txt_social"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                android:id="@+id/rel_btn_environment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/rel_btn_social"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageButton
-                    android:id="@+id/btn_environment"
-                    android:layout_width="118dp"
-                    android:layout_height="125dp"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_chatbot_multi_selection"
-                    android:contentDescription="@string/txt_environment"
-                    android:paddingTop="29dp"
-                    android:paddingBottom="49.6dp"
-                    android:src="@drawable/ic_environment" />
-
-                <TextView
-                    android:id="@+id/txt_btn_environment"
+                    android:id="@+id/rel_btn_environment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/btn_environment"
                     android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/pfd_intextpro_bold"
-                    android:gravity="center_horizontal"
-                    android:lineSpacingExtra="11.1sp"
-                    android:paddingTop="76dp"
-                    android:paddingBottom="19.9dp"
-                    android:text="@string/txt_environment"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="18sp" />
-            </RelativeLayout>
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_social"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_environment"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/txt_environment"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_environment" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_environment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_environment"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/txt_environment"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
 
 
                 <RelativeLayout
@@ -140,7 +139,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rel_btn_other"
+                    android:id="@+id/rel_btn_market_information"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -150,7 +149,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageButton
-                        android:id="@+id/btn_other"
+                        android:id="@+id/btn_market_information"
                         android:layout_width="118dp"
                         android:layout_height="125dp"
                         android:layout_centerHorizontal="true"
@@ -164,7 +163,7 @@
                         android:id="@+id/txt_btn_other"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignBottom="@+id/btn_other"
+                        android:layout_alignBottom="@+id/btn_market_information"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
@@ -172,6 +171,193 @@
                         android:paddingTop="76dp"
                         android:paddingBottom="19.9dp"
                         android:text="@string/btn_social"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_btn_financial_information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_market_information"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_financial_information"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/btn_social"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_icon_social" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_financial_information"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_financial_information"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/txt_social"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_btn_governance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_financial_information"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_governance"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/btn_social"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_icon_social" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_governance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_governance"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/txt_governance"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_btn_infrastructure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_market_information"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_infrastructure"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/btn_social"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_icon_social" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_infrastructure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_infrastructure"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/txt_infrastructure"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_btn_stakeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_infrastructure"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_stakeholder"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/btn_social"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_icon_social" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_stakeholder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_stakeholder"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/txt_stakeholder"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_btn_quality_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_stakeholder"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_quality_service"
+                        android:layout_width="118dp"
+                        android:layout_height="125dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_chatbot_multi_selection"
+                        android:contentDescription="@string/btn_social"
+                        android:paddingTop="29dp"
+                        android:paddingBottom="49.6dp"
+                        android:src="@drawable/ic_icon_social" />
+
+                    <TextView
+                        android:id="@+id/txt_btn_quality_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/btn_quality_service"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/pfd_intextpro_bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingExtra="11.1sp"
+                        android:paddingTop="76dp"
+                        android:paddingBottom="19.9dp"
+                        android:text="@string/txt_quality_service"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
                 </RelativeLayout>

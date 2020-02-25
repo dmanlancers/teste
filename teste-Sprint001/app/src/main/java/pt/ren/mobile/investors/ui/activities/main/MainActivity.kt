@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewpager)
         viewPager!!.adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
         viewPager!!.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-
         mainActivityViewModel = ViewModelProvider.NewInstanceFactory().create(MainActivityViewModel::class.java)
 
         mainActivityViewModel.title.observe(this, Observer {  title ->
@@ -51,11 +50,8 @@ class MainActivity : AppCompatActivity() {
                 val mainIntent = Intent(this@MainActivity, ChatBotActivity::class.java)
                 startActivity(mainIntent)
         }
-
     }
 
-    /*override fun onSupportNavigateUp() =
-        findNavController( R.id.my_nav_host_fragment).navigateUp()*/
 
 
 }
