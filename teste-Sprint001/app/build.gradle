@@ -3,11 +3,23 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
+
         applicationId "pt.ren.mobile.investors"
         minSdkVersion 17
         targetSdkVersion 29
@@ -66,6 +78,11 @@ android {
 
 dependencies {
     def multidex_version = "2.0.1"
+    def room_version = "2.2.4"
+
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
     implementation "androidx.multidex:multidex:$multidex_version"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -84,9 +101,9 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.facebook.stetho:stetho:1.5.1'
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.0-alpha01"
-    implementation "androidx.navigation:navigation-ui-ktx:2.3.0-alpha01"
-    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.3.0-alpha01"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.0-alpha02"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.0-alpha02"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.3.0-alpha02"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -94,10 +111,11 @@ dependencies {
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    kapt 'android.arch.persistence.room:compiler:1.1.1'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation "androidx.navigation:navigation-testing:2.3.0-alpha01"
+    testImplementation "androidx.room:room-testing:$room_version"
+    androidTestImplementation "androidx.navigation:navigation-testing:2.3.0-alpha02"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'

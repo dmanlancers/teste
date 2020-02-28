@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">REN INVESTORS</string>
     <string name="welcome"> WELCOME!</string>
+    <string name="welcome_back">WELCOME BACK %1$s!</string>
     <string name="txt_ty">Thank you!</string>
     <string name="introduction">We are happy to see you.\nAre you ready to discover our latest news?</string>
     <string name="skip">Skip</string>
@@ -16,7 +17,8 @@
     <string name="btn_chatbot1_next">btn_chatbot1_next</string>
     <string name="ctb_question01">First things first. What is your name?</string>
     <string name="submit">Submit</string>
-    <string name="txt_greetings">Pleased to meet you,%1$s.\n In order to adjust contents to your preferences we will ask you a few questions.</string>
+    <string name="txt_greetings_beginning">Pleased to meet you,\n</string>
+    <string name="txt_greetings_final">".In order to adjust contents to your preferences we will ask you a few questions.</string>
 
     <string name="txt_rating">How would you rate your knowledge on financial investments?</string>
     <string name="btn_proficient">Proficient</string>
@@ -35,12 +37,14 @@
     <string name="txt_social">Social</string>
     <string name="txt_environment">Environment</string>
     <string name="txt_renewable">Renewable</string>
-    <string name="txt_market_information">Market Information</string>
-    <string name="txt_financial_information">Financial Information</string>
+    <string name="txt_market_information">Market \n Information</string>
+    <string name="txt_financial_information">Financial \n Information</string>
     <string name="txt_governance">Governance</string>
     <string name="txt_infrastructure">Infrastructure</string>
     <string name="txt_stakeholder">Stakeholder</string>
-    <string name="txt_quality_service">Quality of Service</string>
+    <string name="txt_quality_service">Quality of\n Service</string>
+    <string name="no_name">You must enter a name…</string>
+
 
     //Profile
     <string name="profile_big_title"><font fgcolor='#2ad69e'><b><u>Sustainability</u></b></font> and social affairs guide your preferences.</string>

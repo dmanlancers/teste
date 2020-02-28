@@ -3,11 +3,18 @@ package pt.ren.mobile.investors.ui.activities.splash_screen
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.text.SpannableString
+import android.text.TextUtils
+import android.text.style.UnderlineSpan
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
+import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.android.synthetic.main.ctb_block01.*
 import pt.ren.mobile.investors.ui.activities.main.MainActivity
 import pt.ren.mobile.investors.R
-
+import pt.ren.mobile.investors.repository.AppDatabase
+import pt.ren.mobile.investors.utils.shared_preferences.SharedPreference
 
 
 class SplashScreenActivity : AppCompatActivity(){
@@ -19,10 +26,35 @@ class SplashScreenActivity : AppCompatActivity(){
     public override fun onCreate(icicle: Bundle?) {
         super.onCreate(icicle)
         setContentView(R.layout.activity_splash)
+        val sharedPreference = SharedPreference(this)
+        val name = sharedPreference.getValueString("name")
+        val txtWelcomeLogin = resources.getString(R.string.welcome_back, name.toString().toUpperCase())
+        val txtWelcomeRegister = resources.getString(R.string.welcome)
+
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "Investors"
+        ).build()
+       //db.userDao().getAll()
+
+        /*val investorName = SpannableString(name.toString().toUpperCase() )
+        investorName.setSpan(UnderlineSpan(), 0, investorName.length, 0)
+*/
 
 
+        /*val presentation = TextUtils.concat(txtGreetingsStart, investorName, txtGreetingsEnd)*/
 
-        if (rooted) {
+
+      /*  if(name != null){
+
+        txt_welcome.text = txtWelcomeLogin
+
+        }else{
+
+            txt_welcome.text = txtWelcomeRegister
+        }*/
+
+        if (!rooted) {
 
             val builder = AlertDialog.Builder(this@SplashScreenActivity)
 
@@ -30,7 +62,7 @@ class SplashScreenActivity : AppCompatActivity(){
             builder.setTitle("Security Issue!!")
 
             // Display a message on alert dialog
-            builder.setMessage("Your device is rooted...We can't proceed, please contact us...")
+            builder.setMessage("Your device is rooted...\n Please contact us...")
 
             // Set a positive button and its click listener on alert dialog
             builder.setPositiveButton("OK") { _, _ ->

@@ -17,7 +17,8 @@
             android:scrollbarStyle="outsideInset"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/linearLayout"
@@ -33,7 +34,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
                     app:layout_constraintVertical_bias="0.0">
 
                     <ImageButton
@@ -55,9 +55,8 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
+                        android:paddingTop="80dp"
+                        android:paddingBottom="12.9dp"
                         android:text="@string/txt_social"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
@@ -92,9 +91,8 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
+                        android:paddingTop="80dp"
+                        android:paddingBottom="12.9dp"
                         android:text="@string/txt_environment"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
@@ -120,7 +118,7 @@
                         android:contentDescription="@string/btn_social"
                         android:paddingTop="29dp"
                         android:paddingBottom="49.6dp"
-                        android:src="@drawable/ic_windfan" />
+                        android:src="@drawable/ic_icon_renewables" />
 
                     <TextView
                         android:id="@+id/txt_btn_renewable"
@@ -130,9 +128,8 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
+                        android:paddingTop="80dp"
+                        android:paddingBottom="12.9dp"
                         android:text="@string/txt_renewable"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
@@ -154,63 +151,61 @@
                         android:layout_height="125dp"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/ic_chatbot_multi_selection"
-                        android:contentDescription="@string/btn_social"
+                        android:contentDescription="@string/txt_market_information"
                         android:paddingTop="29dp"
                         android:paddingBottom="49.6dp"
-                        android:src="@drawable/ic_icon_social" />
+                        android:src="@drawable/ic_icon_market" />
 
                     <TextView
-                        android:id="@+id/txt_btn_other"
+                        android:id="@+id/txt_btn_market_information"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/btn_market_information"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
-                        android:text="@string/btn_social"
+                        android:paddingTop="80dp"
+                        android:paddingBottom="12.9dp"
+                        android:text="@string/txt_market_information"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rel_btn_financial_information"
+                android:id="@+id/rel_btn_financial_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rel_btn_market_information"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/btn_financial_information"
+                    android:layout_width="118dp"
+                    android:layout_height="125dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ic_chatbot_multi_selection"
+                    android:contentDescription="@string/txt_financial_information"
+                    android:paddingTop="29dp"
+                    android:paddingBottom="49.6dp"
+                    android:src="@drawable/ic_icon_financial" />
+
+                <TextView
+                    android:id="@+id/txt_btn_financial_information"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/btn_financial_information"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginStart="12dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/rel_btn_market_information"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageButton
-                        android:id="@+id/btn_financial_information"
-                        android:layout_width="118dp"
-                        android:layout_height="125dp"
-                        android:layout_centerHorizontal="true"
-                        android:background="@drawable/ic_chatbot_multi_selection"
-                        android:contentDescription="@string/btn_social"
-                        android:paddingTop="29dp"
-                        android:paddingBottom="49.6dp"
-                        android:src="@drawable/ic_icon_social" />
-
-                    <TextView
-                        android:id="@+id/txt_btn_financial_information"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@+id/btn_financial_information"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/pfd_intextpro_bold"
-                        android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
-                        android:text="@string/txt_social"
-                        android:textColor="@color/dark_blue"
-                        android:textSize="18sp" />
-                </RelativeLayout>
+                    android:fontFamily="@font/pfd_intextpro_bold"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="80dp"
+                    android:paddingBottom="12.9dp"
+                    android:text="@string/txt_financial_information"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp" />
+            </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/rel_btn_governance"
@@ -231,7 +226,7 @@
                         android:contentDescription="@string/btn_social"
                         android:paddingTop="29dp"
                         android:paddingBottom="49.6dp"
-                        android:src="@drawable/ic_icon_social" />
+                        android:src="@drawable/ic_icon_governance" />
 
                     <TextView
                         android:id="@+id/txt_btn_governance"
@@ -241,9 +236,8 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
+                        android:paddingTop="80dp"
+                        android:paddingBottom="12.9dp"
                         android:text="@string/txt_governance"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
@@ -257,7 +251,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginStart="12dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/rel_btn_market_information"
+                    app:layout_constraintStart_toEndOf="@+id/rel_btn_governance"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageButton
@@ -266,10 +260,10 @@
                         android:layout_height="125dp"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/ic_chatbot_multi_selection"
-                        android:contentDescription="@string/btn_social"
+                        android:contentDescription="@string/txt_infrastructure"
                         android:paddingTop="29dp"
                         android:paddingBottom="49.6dp"
-                        android:src="@drawable/ic_icon_social" />
+                        android:src="@drawable/ic_icon_infrasctructure" />
 
                     <TextView
                         android:id="@+id/txt_btn_infrastructure"
@@ -279,9 +273,8 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
+                        android:paddingTop="80dp"
+                        android:paddingBottom="12.9dp"
                         android:text="@string/txt_infrastructure"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
@@ -304,10 +297,10 @@
                         android:layout_height="125dp"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/ic_chatbot_multi_selection"
-                        android:contentDescription="@string/btn_social"
+                        android:contentDescription="@string/txt_stakeholder"
                         android:paddingTop="29dp"
                         android:paddingBottom="49.6dp"
-                        android:src="@drawable/ic_icon_social" />
+                        android:src="@drawable/ic_icon_stakeholder" />
 
                     <TextView
                         android:id="@+id/txt_btn_stakeholder"
@@ -317,9 +310,8 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
+                        android:paddingTop="80dp"
+                        android:paddingBottom="12.9dp"
                         android:text="@string/txt_stakeholder"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />
@@ -344,7 +336,7 @@
                         android:contentDescription="@string/btn_social"
                         android:paddingTop="29dp"
                         android:paddingBottom="49.6dp"
-                        android:src="@drawable/ic_icon_social" />
+                        android:src="@drawable/ic_icon_qos" />
 
                     <TextView
                         android:id="@+id/txt_btn_quality_service"
@@ -354,9 +346,8 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/pfd_intextpro_bold"
                         android:gravity="center_horizontal"
-                        android:lineSpacingExtra="11.1sp"
-                        android:paddingTop="76dp"
-                        android:paddingBottom="19.9dp"
+                        android:paddingTop="80dp"
+                        android:paddingBottom="12.9dp"
                         android:text="@string/txt_quality_service"
                         android:textColor="@color/dark_blue"
                         android:textSize="18sp" />

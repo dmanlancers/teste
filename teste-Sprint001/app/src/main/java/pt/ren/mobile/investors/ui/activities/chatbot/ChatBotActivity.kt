@@ -6,28 +6,30 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Point
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.text.Html
-import android.text.Html.FROM_HTML_MODE_LEGACY
-import android.text.Spanned
+import android.text.SpannableString
+import android.text.TextUtils
+import android.text.style.UnderlineSpan
 import android.util.DisplayMetrics
+import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup.MarginLayoutParams
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_chatbot.*
-import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.ctb_block01.*
 import kotlinx.android.synthetic.main.ctb_block02.*
 import kotlinx.android.synthetic.main.ctb_block03.*
 import kotlinx.android.synthetic.main.ctb_block05.*
 import kotlinx.android.synthetic.main.ctb_block08.*
 import pt.ren.mobile.investors.R
+import pt.ren.mobile.investors.ui.activities.main.MainActivity
 import pt.ren.mobile.investors.ui.activities.profile.ProfileActivity
+import pt.ren.mobile.investors.ui.activities.splash_screen.SplashScreenActivity
 import pt.ren.mobile.investors.utils.shared_preferences.SharedPreference
 import timber.log.Timber
 
@@ -35,12 +37,13 @@ import timber.log.Timber
 class ChatBotActivity : AppCompatActivity() {
 
     private var counter = 0
+
+
+    private val buttonList = ArrayList<ImageButton>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chatbot)
-        val marginRowBlock01 = ctb_block01?.layoutParams as MarginLayoutParams
 
-        val editTextBlock01 = divider01?.layoutParams as MarginLayoutParams
         val display = windowManager.defaultDisplay
         val size = Point()
         display.getSize(size)
@@ -48,25 +51,14 @@ class ChatBotActivity : AppCompatActivity() {
         val heightPx: Int = size.y
         val screenSize = heightPx.pxToDp(this.resources.displayMetrics)
 
-
-
-
-        if (screenSize <= 618) {
-
-            marginRowBlock01.topMargin = 1300
-
-        } else {
-
-            marginRowBlock01.topMargin = 1600
-        }
-        //etxt_name.requestFocus()
-
         fab.setImageDrawable(
             ContextCompat.getDrawable(
                 this,
-                R.drawable.ic_right_arow
+                R.drawable.ic_right_arrow
             )
         )
+
+        //Visibility of views
         fab.visibility = View.GONE
         txt_name.visibility = View.GONE
         user_logo.visibility = View.GONE
@@ -78,18 +70,24 @@ class ChatBotActivity : AppCompatActivity() {
         ctb_block07.visibility = View.GONE
         ctb_block08.visibility = View.GONE
         ctb_block09.visibility = View.GONE
-        //profile_block.visibility = View.GONE
 
 
+        //Add buttons to list for horizontal ScrollView
+        buttonList.add(btn_social)
+        buttonList.add(btn_environment)
+        buttonList.add(btn_renewable)
+        buttonList.add(btn_market_information)
+        buttonList.add(btn_financial_information)
+        buttonList.add(btn_governance)
+        buttonList.add(btn_infrastructure)
+        buttonList.add(btn_stakeholder)
+        buttonList.add(btn_quality_service)
 
-        btn_submit_block01.setOnClickListener {
+        Timber.i(String.format("SIZE, %s", buttonList.size))
 
-
-            scrollToBlock3()
-
-        }
 
         //Button Listeners
+        btnSubmitName()
         btnProficient()
         btnIntermediate()
         btnElementary()
@@ -109,9 +107,78 @@ class ChatBotActivity : AppCompatActivity() {
         btnInfrastruture()
         btnStakeholder()
         btnQualityService()
-        submitForm()
 
 
+    }
+
+    //Animation items
+    private fun animationBlock03() {
+
+        Handler().postDelayed({
+            btn_proficient.visibility = View.VISIBLE
+
+
+            btn_proficient.startAnimation(
+                AnimationUtils.loadAnimation(
+                    this, R.anim.slide_in_left
+                )
+            )
+        }, 400.toLong())
+
+
+        Handler().postDelayed({
+            btn_intermediate.visibility = View.VISIBLE
+
+            btn_intermediate.startAnimation(
+                AnimationUtils.loadAnimation(
+                    this, R.anim.slide_in_left
+                )
+            )
+        }, 600.toLong())
+
+
+        Handler().postDelayed({
+
+            btn_elementary.visibility = View.VISIBLE
+            btn_elementary.startAnimation(
+                AnimationUtils.loadAnimation(
+                    this, R.anim.slide_in_left
+                )
+            );
+        }, 800.toLong())
+
+    }
+
+    private fun animationBlock05() {
+        Handler().postDelayed({
+
+            btn_considerably.visibility = View.VISIBLE
+            btn_considerably.startAnimation(
+                AnimationUtils.loadAnimation(
+                    this, R.anim.slide_in_left
+                )
+            );
+        }, 400.toLong())
+
+        Handler().postDelayed({
+
+            btn_moderately.visibility = View.VISIBLE
+            btn_moderately.startAnimation(
+                AnimationUtils.loadAnimation(
+                    this, R.anim.slide_in_left
+                )
+            );
+        }, 600.toLong())
+
+        Handler().postDelayed({
+
+            btn_few.visibility = View.VISIBLE
+            btn_few.startAnimation(
+                AnimationUtils.loadAnimation(
+                    this, R.anim.slide_in_left
+                )
+            );
+        }, 800.toLong())
     }
 
     //Auto Scroll
@@ -119,8 +186,16 @@ class ChatBotActivity : AppCompatActivity() {
 
         val sharedPreference = SharedPreference(this)
         val name = etxt_block01.editableText.toString()
+        val txtGreetingsStart = resources.getString(R.string.txt_greetings_beginning)
+        val txtGreetingsEnd = resources.getString(R.string.txt_greetings_final)
         sharedPreference.save("name", name)
-        val presentation = resources.getString(R.string.txt_greetings, name);
+
+        val investorName = SpannableString(name )
+        investorName.setSpan(UnderlineSpan(), 0, investorName.length, 0)
+
+
+
+        val presentation = TextUtils.concat(txtGreetingsStart, investorName, txtGreetingsEnd)
 
 
         val imm: InputMethodManager =
@@ -132,10 +207,12 @@ class ChatBotActivity : AppCompatActivity() {
         user_logo.visibility = View.VISIBLE
         btn_submit_block01.visibility = View.INVISIBLE
         txt_name.visibility = View.VISIBLE
+
         txt_block02.text = presentation
 
         if (sharedPreference.getValueString("name") != null) {
             txt_name.text = sharedPreference.getValueString("name")!!
+
 
         }
         val dividerBlock02 = divider02?.layoutParams as MarginLayoutParams
@@ -147,6 +224,7 @@ class ChatBotActivity : AppCompatActivity() {
                 ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider02.bottom)
             animator.duration = 900
             animator.start()
+
         }, 500.toLong())
 
 
@@ -157,49 +235,20 @@ class ChatBotActivity : AppCompatActivity() {
 
             val dividerBlock03 = divider03?.layoutParams as MarginLayoutParams
             ctb_block03.visibility = View.VISIBLE
+            dividerBlock03.topMargin = 200
+
+
 
             val animator =
                 ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider03.bottom)
-            animator.duration = 900
+            animator.duration = 4000
             animator.start()
-            dividerBlock03.bottomMargin = 100
-
-            btn_proficient.visibility = View.GONE
-            btn_intermediate.visibility = View.GONE
-            btn_elementary.visibility = View.GONE
-            Handler().postDelayed({
-                btn_proficient.visibility = View.VISIBLE
 
 
-                btn_proficient.startAnimation(
-                    AnimationUtils.loadAnimation(
-                        this, R.anim.slide_in_left
-                    )
-                );
-            }, 200.toLong())
 
-            Handler().postDelayed({
-                btn_intermediate.visibility = View.VISIBLE
+            animationBlock03()
 
-                btn_intermediate.startAnimation(
-                    AnimationUtils.loadAnimation(
-                        this, R.anim.slide_in_left
-                    )
-                );
-            }, 400.toLong())
-
-            Handler().postDelayed({
-
-                btn_elementary.visibility = View.VISIBLE
-                btn_elementary.startAnimation(
-                    AnimationUtils.loadAnimation(
-                        this, R.anim.slide_in_left
-                    )
-                );
-            }, 600.toLong())
-
-
-        }, 3000.toLong())
+        }, 2000.toLong())
 
 
     }
@@ -210,56 +259,29 @@ class ChatBotActivity : AppCompatActivity() {
             val dividerBlock04 = divider04?.layoutParams as MarginLayoutParams
             ctb_block04.visibility = View.VISIBLE
             //dividerBlock04.bottomMargin = 200
-            val animator = ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider04.bottom)
+            val animator =
+                ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider04.bottom)
             animator.duration = 900
             animator.start()
 
 
-        }, 2000.toLong())
+        }, 500.toLong())
 
         Handler().postDelayed({
             val dividerBlock05 = divider05?.layoutParams as MarginLayoutParams
             ctb_block05.visibility = View.VISIBLE
             dividerBlock05.bottomMargin = 200
-            val animator = ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider05.bottom)
-            animator.duration = 900
+            val animator =
+                ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider05.bottom)
+            animator.duration = 2000
             animator.start()
 
+            animationBlock05()
 
 
-            Handler().postDelayed({
+        }, 2000.toLong())
 
-
-
-                btn_considerably.startAnimation(
-                    AnimationUtils.loadAnimation(
-                        this, R.anim.slide_in_left
-                    )
-                );
-            }, 200.toLong())
-
-            Handler().postDelayed({
-
-
-                btn_moderately.startAnimation(
-                    AnimationUtils.loadAnimation(
-                        this, R.anim.slide_in_left
-                    )
-                );
-            }, 400.toLong())
-
-            Handler().postDelayed({
-
-
-                btn_few.startAnimation(
-                    AnimationUtils.loadAnimation(
-                        this, R.anim.slide_in_left
-                    )
-                );
-            }, 600.toLong())
-
-
-        }, 3000.toLong())
+        //
     }
 
     private fun scrollToBlock8() {
@@ -268,7 +290,8 @@ class ChatBotActivity : AppCompatActivity() {
             val dividerBlock06 = divider06?.layoutParams as MarginLayoutParams
             ctb_block06.visibility = View.VISIBLE
             dividerBlock06.bottomMargin = 200
-            val animator = ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider06.bottom)
+            val animator =
+                ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider06.bottom)
             animator.duration = 900
             animator.start()
 
@@ -280,7 +303,8 @@ class ChatBotActivity : AppCompatActivity() {
             val dividerBlock07 = divide07?.layoutParams as MarginLayoutParams
             ctb_block07.visibility = View.VISIBLE
             // middleBlock07.bottomMargin = 200
-            val animator = ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divide07.bottom)
+            val animator =
+                ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divide07.bottom)
             animator.duration = 900
             animator.start()
 
@@ -292,23 +316,23 @@ class ChatBotActivity : AppCompatActivity() {
             val dividerBlock08 = divider08?.layoutParams as MarginLayoutParams
             ctb_block08.visibility = View.VISIBLE
             dividerBlock08.bottomMargin = 300
-            val animator = ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider08.bottom)
-            animator.duration = 900
+            val animator =
+                ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider08.bottom)
+            animator.duration = 2000
             animator.start()
 
             Handler().postDelayed({
 
-
-
+                scv_block08.visibility = View.VISIBLE
                 scv_block08.startAnimation(
                     AnimationUtils.loadAnimation(
                         this, R.anim.slide_in_left
                     )
                 );
-            }, 200.toLong())
+            }, 400.toLong())
 
 
-        }, 3000.toLong())
+        }, 2000.toLong())
 
     }
 
@@ -318,20 +342,21 @@ class ChatBotActivity : AppCompatActivity() {
         val dividerBlock09 = divider09?.layoutParams as MarginLayoutParams
         ctb_block09.visibility = View.VISIBLE
         dividerBlock09.bottomMargin = 200
-        val animator = ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider09.bottom)
+        val animator =
+            ObjectAnimator.ofInt(chatBotScrollView, "scrollY", divider09.bottom)
         animator.duration = 900
         animator.start()
 
-        fab.visibility = View.GONE
+
 
 
 
 
         Handler().postDelayed({
-        /*    profile_block.visibility = View.VISIBLE
-            chatBotScrollView.post {
-                chatBotScrollView.fullScroll(View.FOCUS_DOWN)
-            }*/
+            /*    profile_block.visibility = View.VISIBLE
+                chatBotScrollView.post {
+                    chatBotScrollView.fullScroll(View.FOCUS_DOWN)
+                }*/
 
             val mainIntent = Intent(this@ChatBotActivity, ProfileActivity::class.java)
             startActivity(mainIntent)
@@ -344,6 +369,35 @@ class ChatBotActivity : AppCompatActivity() {
     }
 
     //Button Listeners
+    private fun btnSubmitName() {
+
+        btn_submit_block01.setOnClickListener {
+
+            if (etxt_block01.text.isNotEmpty()) {
+
+
+                scrollToBlock3()
+
+            } else {
+                /*val view = this.currentFocus
+                view?.let { v ->
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+                    imm?.hideSoftInputFromWindow(v.windowToken, 0)
+                }*/
+
+                btn_submit_block01.visibility = View.GONE
+                etxt_block01.error = "Please enter your name";
+
+                Handler().postDelayed({
+                    etxt_block01.error = null
+                    btn_submit_block01.visibility = View.VISIBLE
+
+                }, 2200.toLong())
+
+
+            }
+        }
+    }
 
     private fun btnProficient() {
 
@@ -503,7 +557,7 @@ class ChatBotActivity : AppCompatActivity() {
                 btn_considerably.isClickable = false
                 btn_few.isClickable = false
 
-                scrollToBlock5()
+                scrollToBlock8()
 
             } else {
                 btn_moderately.setBackgroundResource(R.drawable.ic_chatbot_rate_rounded)
@@ -529,7 +583,7 @@ class ChatBotActivity : AppCompatActivity() {
             sharedPreference.save("know", few)
             btn_few.setBackgroundResource(R.drawable.ic_option_selected)
             btn_few.setTextColor(Color.parseColor("#001464"))
-            counter
+
 
             if (btnConsiderablyStatus && btnModeratelyStatus) {
 
@@ -559,19 +613,54 @@ class ChatBotActivity : AppCompatActivity() {
         btn_social.setOnClickListener {
             val sharedPreference = SharedPreference(this)
             val social = "social"
-            counter =
-                if (btn_social.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_social.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area1")
-                    counter.minus(1)
-                } else {
 
-                    btn_social.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area1", social)
-                    counter.plus(1)
+
+            if (btn_social.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
+                btn_social.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area1")
+                buttonList.add(btn_social)
+                counter = counter.minus(1)
+
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
 
 
                 }
+                fab.visibility = View.GONE
+            } else {
+
+                btn_social.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area1", social)
+                buttonList.remove(btn_social)
+                counter = counter.plus(1)
+
+
+
+                Timber.i(String.format("SIZE_SOCIAL, %s", buttonList.size))
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
+
+
+                }
+
+
+            }
 
             Timber.i(String.format("BTN, %s", counter))
 
@@ -581,33 +670,67 @@ class ChatBotActivity : AppCompatActivity() {
             Timber.i(String.format("BTN, %s", social))
 
         }
-        submitForm()
+
 
     }
 
     private fun btnEnvironment() {
 
+
         btn_environment.setOnClickListener {
             val sharedPreference = SharedPreference(this)
             val environment = "environment"
 
-            counter =
-                if (btn_environment.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_environment.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area2")
-                    counter.minus(1)
-                } else {
 
-                    btn_environment.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area2", environment)
-                    counter.plus(1)
+            if (btn_environment.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
+                btn_environment.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area2")
+                buttonList.add(btn_environment)
+                counter = counter.minus(1)
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
 
 
                 }
+
+            } else {
+
+                btn_environment.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area2", environment)
+                buttonList.remove(btn_environment)
+                counter = counter.plus(1)
+
+
+
+                for (i in 0 until buttonList.size) {
+
+                    val tempButton = buttonList[i]
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
+
+
+                }
+
+
+            }
+
+
             Timber.i(String.format("BTN, %s", counter))
             Timber.i(String.format("BTN, %s", environment))
         }
-        submitForm()
+
     }
 
     private fun btnRenewable() {
@@ -616,51 +739,107 @@ class ChatBotActivity : AppCompatActivity() {
             val sharedPreference = SharedPreference(this)
             val renewable = "renewable"
 
-            counter =
-                if (btn_renewable.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_renewable.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area3")
-                    counter.minus(1)
-                } else {
 
-                    btn_renewable.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area3", renewable)
-                    counter.plus(1)
+            if (btn_renewable.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
+                btn_renewable.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area3")
+                buttonList.add(btn_renewable)
+                counter = counter.minus(1)
+
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
 
 
                 }
 
+            } else {
+
+                btn_renewable.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area3", renewable)
+                buttonList.remove(btn_renewable)
+                counter = counter.plus(1)
+
+                for (i in 0 until buttonList.size) {
+
+                    val tempButton = buttonList[i]
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
+
+                }
+
+
+            }
+
             Timber.i(String.format("BTN, %s", counter))
             Timber.i(String.format("BTN, %s", renewable))
 
-            submitForm()
+
         }
     }
+
 
     private fun btnMarketInformation() {
 
         btn_market_information.setOnClickListener {
             val sharedPreference = SharedPreference(this)
-            val marketInformation = "market_information"
+            val market = "market"
 
-            counter =
-                if (btn_market_information.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_market_information.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area4")
-                    counter.minus(1)
-                } else {
 
-                    btn_market_information.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area4", marketInformation)
-                    counter.plus(1)
+            if (btn_market_information.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
+                btn_market_information.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area4")
+                buttonList.add(btn_market_information)
+                counter = counter.minus(1)
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
+
+
+                }
+            } else {
+
+                btn_market_information.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area4", market)
+                buttonList.remove(btn_market_information)
+                counter = counter.plus(1)
+                for (i in 0 until buttonList.size) {
+
+                    val tempButton = buttonList[i]
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
 
 
                 }
 
 
-            Timber.i(String.format("BTN, %s", marketInformation))
+            }
 
-            submitForm()
+
+            Timber.i(String.format("BTN, %s", market))
+
         }
     }
 
@@ -670,51 +849,110 @@ class ChatBotActivity : AppCompatActivity() {
             val sharedPreference = SharedPreference(this)
             val financialInformation = "financial_information"
 
-            counter =
-                if (btn_financial_information.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_financial_information.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area5")
-                    counter.minus(1)
-                } else {
 
-                    btn_financial_information.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area5", financialInformation)
-                    counter.plus(1)
+            if (btn_financial_information.background.constantState === resources.getDrawable(
+                    R.drawable.ic_area_selected
+                ).constantState
+            ) {
+                btn_financial_information.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area5")
+                counter = counter.minus(1)
+                buttonList.add(btn_financial_information)
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
+
+
+                }
+            } else {
+
+                btn_financial_information.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area5", financialInformation)
+                counter = counter.plus(1)
+                buttonList.remove(btn_financial_information)
+
+                for (i in 0 until buttonList.size) {
+
+                    val tempButton = buttonList[i]
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
 
 
                 }
 
 
+            }
+
+
             Timber.i(String.format("BTN, %s", financialInformation))
 
-            submitForm()
+
         }
     }
 
     private fun btnGovernance() {
 
+
         btn_governance.setOnClickListener {
             val sharedPreference = SharedPreference(this)
             val governance = "governance"
 
-            counter =
-                if (btn_governance.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_governance.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area6")
-                    counter.minus(1)
-                } else {
 
-                    btn_governance.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area6", governance)
-                    counter.plus(1)
+            if (btn_governance.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
+                btn_governance.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area6")
+                counter = counter.minus(1)
+                buttonList.add(btn_governance)
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
+
+
+                }
+            } else {
+
+                btn_governance.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area6", governance)
+                counter = counter.plus(1)
+                buttonList.remove(btn_governance)
+                for (i in 0 until buttonList.size) {
+
+                    val tempButton = buttonList[i]
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
 
 
                 }
 
 
+            }
+
+
             Timber.i(String.format("BTN, %s", governance))
 
-            submitForm()
+
         }
     }
 
@@ -724,24 +962,55 @@ class ChatBotActivity : AppCompatActivity() {
             val sharedPreference = SharedPreference(this)
             val infrastruture = "infrastruture"
 
-            counter =
-                if (btn_infrastructure.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_infrastructure.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area7")
-                    counter.minus(1)
-                } else {
 
-                    btn_infrastructure.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area7", infrastruture)
-                    counter.plus(1)
+            if (btn_infrastructure.background.constantState === resources.getDrawable(
+                    R.drawable.ic_area_selected
+                ).constantState
+            ) {
+                btn_infrastructure.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area7")
+                counter = counter.minus(1)
+                buttonList.add(btn_governance)
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
+
+
+                }
+            } else {
+
+                btn_infrastructure.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area7", infrastruture)
+                counter = counter.plus(1)
+                buttonList.remove(btn_governance)
+
+                for (i in 0 until buttonList.size) {
+
+                    val tempButton = buttonList[i]
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
 
 
                 }
 
 
+            }
+
+
             Timber.i(String.format("BTN, %s", infrastruture))
 
-            submitForm()
+
         }
     }
 
@@ -751,24 +1020,52 @@ class ChatBotActivity : AppCompatActivity() {
             val sharedPreference = SharedPreference(this)
             val stakeholder = "stakeholder"
 
-            counter =
-                if (btn_stakeholder.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_stakeholder.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area8")
-                    counter.minus(1)
-                } else {
 
-                    btn_stakeholder.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area8", stakeholder)
-                    counter.plus(1)
+            if (btn_stakeholder.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
+                btn_stakeholder.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area8")
+                counter = counter.minus(1)
+                buttonList.add(btn_governance)
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
+
+
+                }
+            } else {
+
+                btn_stakeholder.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area8", stakeholder)
+                counter = counter.plus(1)
+                buttonList.remove(btn_governance)
+
+                for (i in 0 until buttonList.size) {
+
+                    val tempButton = buttonList[i]
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
 
 
                 }
 
 
+            }
+
+
             Timber.i(String.format("BTN, %s", stakeholder))
 
-            submitForm()
+
         }
     }
 
@@ -778,30 +1075,60 @@ class ChatBotActivity : AppCompatActivity() {
             val sharedPreference = SharedPreference(this)
             val qualityService = "quality_service"
 
-            counter =
-                if (btn_quality_service.background.constantState === resources.getDrawable(R.drawable.ic_area_selected).constantState) {
-                    btn_quality_service.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
-                    sharedPreference.removeValue("area9")
-                    counter.minus(1)
-                } else {
 
-                    btn_quality_service.setBackgroundResource(R.drawable.ic_area_selected)
-                    sharedPreference.save("area9", qualityService)
-                    counter.plus(1)
+            if (btn_quality_service.background.constantState === resources.getDrawable(
+                    R.drawable.ic_area_selected
+                ).constantState
+            ) {
+                btn_quality_service.setBackgroundResource(R.drawable.ic_chatbot_multi_selection)
+                sharedPreference.removeValue("area9")
+                counter = counter.minus(1)
+                buttonList.add(btn_quality_service)
+                for (i in 0 until buttonList.size) {
+                    val tempButton = buttonList[i]
+
+
+
+                    if (counter < 3) {
+
+                        fab.visibility = View.GONE
+                        tempButton.isClickable = true
+                    }
+
+
+                }
+            } else {
+
+                btn_quality_service.setBackgroundResource(R.drawable.ic_area_selected)
+                sharedPreference.save("area9", qualityService)
+                counter = counter.plus(1)
+                buttonList.remove(btn_quality_service)
+
+                for (i in 0 until buttonList.size) {
+
+                    val tempButton = buttonList[i]
+
+                    if (counter == 3) {
+
+                        fab.visibility = View.VISIBLE
+                        tempButton.isClickable = false
+                    }
 
 
                 }
 
+            }
+
 
             Timber.i(String.format("BTN, %s", qualityService))
 
-            submitForm()
         }
     }
 
     private fun btnFab() {
 
         fab.setOnClickListener {
+
 
             scrollToFinal()
             /* Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
@@ -811,22 +1138,23 @@ class ChatBotActivity : AppCompatActivity() {
 
     }
 
-    private fun submitForm() {
 
-        if (counter == 3) {
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return if (keyCode == KeyEvent.KEYCODE_BACK) { // your code here
 
-            fab.visibility = View.VISIBLE
-        } else {
+            val mainIntent = Intent(this@ChatBotActivity, SplashScreenActivity::class.java)
+            startActivity(mainIntent)
 
-            fab.visibility = View.GONE
-        }
-
+            false
+        } else super.onKeyDown(keyCode, event)
     }
 
-    //Screen Size
-    fun Int.dpToPx(displayMetrics: DisplayMetrics): Int = (this * displayMetrics.density).toInt()
+    //Screen Size converter
+    fun Int.dpToPx(displayMetrics: DisplayMetrics): Int =
+        (this * displayMetrics.density).toInt()
 
-    fun Int.pxToDp(displayMetrics: DisplayMetrics): Int = (this / displayMetrics.density).toInt()
+    fun Int.pxToDp(displayMetrics: DisplayMetrics): Int =
+        (this / displayMetrics.density).toInt()
 
 }
 

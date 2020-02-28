@@ -2,33 +2,27 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/background_gradient_selector"
-    android:orientation="vertical"
-
-    android:addStatesFromChildren="true"
-
     android:layout_width="match_parent"
-
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:addStatesFromChildren="true"
+    android:background="@drawable/background_gradient_selector"
+    android:orientation="vertical">
 
 
     <ScrollView
         android:id="@+id/chatBotScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-
-            >
+            android:orientation="vertical">
 
             <include
                 android:id="@+id/ctb_block01"
-                layout="@layout/ctb_block01"
-                />
+                layout="@layout/ctb_block01" />
+
 
             <View
                 android:id="@+id/divider01"
@@ -38,14 +32,14 @@
 
             <include
                 android:id="@+id/ctb_block02"
-                layout="@layout/ctb_block02"
-              />
+                layout="@layout/ctb_block02" />
 
             <View
                 android:id="@+id/divider02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent" />
+
 
             <include
                 android:id="@+id/ctb_block03"
@@ -57,6 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@android:color/transparent" />
+
 
             <include
                 android:id="@+id/ctb_block04"
@@ -116,18 +111,7 @@
                 android:id="@+id/divider09"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@android:color/transparent"/>
-
-
-            <!--          <include
-                          android:id="@+id/profile_block"
-                          layout="@layout/activity_profile" />
-
-                      <View
-                          android:id="@+id/divider10"
-                          android:layout_width="match_parent"
-                          android:layout_height="1dp"
-                          android:background="@android:color/transparent"/>-->
+                android:background="@android:color/transparent" />
 
 
         </LinearLayout>
@@ -135,23 +119,16 @@
     </ScrollView>
 
 
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:backgroundTint="@color/chatbot_next"
-            app:borderWidth="0dp"
-            />
-
-
-
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@color/chatbot_next"
+        app:borderWidth="0dp" />
 
 
 </FrameLayout>
